@@ -8,7 +8,7 @@ _sum_ = 0
 GAP = []
 maxLIST = 0
 difference = 0
-if _line_ != _column_:
+if _line_ != _column_ or (_line_ <= 0 or _column_ <= 0):
     print("erro")
 else:
     
@@ -27,10 +27,10 @@ else:
             print(_max_line)
             maxNum = 0
             for x in range(len(_max_line)):
-                if i == 0:
-                    maxLIST = _max_line[i]
-                elif _max_line[i] > maxLIST: # Maior valor da Matriz
-                    maxLIST = _max_line[i]
+                if x == 0:
+                    maxLIST = _max_line[x]
+                elif _max_line[x] > maxLIST: # Maior valor da Matriz
+                    maxLIST = _max_line[x]
                     
                     
     for l in range (_line_): # Maior valor de cada coluna
@@ -66,4 +66,5 @@ else:
     print(maxLIST)
     print(_sum_)
     print(difference)
+            
             

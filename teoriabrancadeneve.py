@@ -8,14 +8,23 @@ def monitorar_jantar():
         entrada = input().split(':')
 
         if entrada[0] == 'ENTROU':
-            nome = entrada[1].strip()
-            if nome in anoes:
-                print('Anao ja estava em casa.')
+            if len(entrada) > 1:
+                nome = entrada[1].strip()
+                if nome in anoes:
+                    print('Anao ja estava em casa.')
+                else:
+                    anoes.append(nome)
+                    comida = int(input())
+                    print(f'{nome} entrou e gostaria de {comida}g de comida.')
+                    quantidade_comida.append(comida)
             else:
-                anoes.append(nome)
-                comida = int(input())
-                print(f'{nome} entrou e gostaria de {comida}g de comida.')
-                quantidade_comida.append(comida)
+                if nome in anoes:
+                    print('Anao ja estava em casa.')
+                else:
+                    anoes.append(nome)
+                    comida = int(input())
+                    print(f'entrou e gostaria de {comida}g de comida.')
+                    quantidade_comida.append(comida)
         elif entrada[0] == 'SAIU':
             nome = entrada[1].strip()
             if nome not in anoes:
